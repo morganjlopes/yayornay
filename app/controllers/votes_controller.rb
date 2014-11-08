@@ -2,19 +2,23 @@ class VotesController < ApplicationController
   before_action :set_question
   
   def yay
-    vote = @question.votes.build
-    vote.agreement = true
-    vote.save
+    @vote = @question.votes.build
+    @vote.agreement = true
+    @vote.save
 
-    redirect_to :back, :notice => "Thanks for your vote of yes."
+    redirect_to confirmation_question_vote_path(@question, @vote), :notice => "Thanks for your vote of yes."
   end
 
   def nay
-    vote = @question.votes.build
-    vote.agreement = false
-    vote.save
+    @vote = @question.votes.build
+    @vote.agreement = false
+    @vote.save
 
-    redirect_to :back, :notice => "Thanks for your vote of no."
+    redirect_to confirmation_question_vote_path(@question, @vote), :notice => "Thanks for your vote of no."
+  end
+
+  def confirmation
+    @vote = @question.votes.find(params[:id])
   end
 
   private

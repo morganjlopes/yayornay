@@ -6,6 +6,10 @@ Rails.application.routes.draw do
         get :yay
         get :nay
       end
+
+      member do
+        get :confirmation
+      end
     end
   end
 

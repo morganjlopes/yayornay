@@ -12,5 +12,6 @@
  *
  *= require_self
  *= require bootstrap/bootstrap
+ *= require bootstrap/bootstrap-theme
  *= require_tree .
  */

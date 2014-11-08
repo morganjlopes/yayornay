@@ -1,24 +1,22 @@
-<h1>Listing questions</h1>
+<h1>Questions</h1>
 
-<table>
+<table id="questions_table" class="table">
   <thead>
     <tr>
       <th>Title</th>
-      <th>Description</th>
-      <th>Is public</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-        <td><%= question.title %></td>
-        <td><%= question.description %></td>
-        <td><%= question.is_public %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td colspan="3" class="text-center text-muted"><em><%= question.total_votes %> Votes</em></td>
+      </tr>
+      <tr>
+        <td><%= link_to question.title, question %></td>
+        <td class="percentages text-success"><%= number_to_percentage(question.yay_percentage, :precision => 0) %></td>
+        <td class="percentages text-danger"><%= number_to_percentage(question.nay_percentage, :precision => 0) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Question', new_question_path %>
+<%= link_to 'New Question', new_question_path, :class => "btn btn-primary btn-lg btn-block" %>
