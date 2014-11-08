@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108151417) do
+ActiveRecord::Schema.define(version: 20141108154011) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20141108151417) do
     t.text     "title"
     t.text     "description"
     t.boolean  "is_public",   default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "votes", force: true do |t|
+    t.integer  "question_id"
+    t.boolean  "agreement",   default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

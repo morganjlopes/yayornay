@@ -12,6 +12,10 @@ p, ol, ul, td {
   line-height: 18px;
 }
 
+h1 {
+  font-family: helvetica, sans-serif;
+}
+
 pre {
   background-color: #eee;
   padding: 10px;
@@ -74,4 +78,24 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 0px;
 }
