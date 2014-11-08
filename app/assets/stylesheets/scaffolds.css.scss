@@ -29,6 +29,10 @@ a {
   }
 }
 
+h1 {
+  font-size: 30px;
+}
+
 div {
   &.field, &.actions {
     margin-bottom: 10px;
@@ -43,6 +47,10 @@ div {
   padding: 2px;
   background-color: red;
   display: table;
+}
+
+.container {
+  max-width: 400px;
 }
 
 #error_explanation {

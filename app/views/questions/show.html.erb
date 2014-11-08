@@ -1,19 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div id="question_wrapper">
+	<h1 class="text-center"><%= @question.title %></h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @question.title %>
-</p>
+	<% if @question.description.present? %>
+		<div id="info_button">?</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @question.description %>
-</p>
+		<p>
+		  <%= @question.description %>
+		</p>
+	<% end %>
 
-<p>
-  <strong>Is public:</strong>
-  <%= @question.is_public %>
-</p>
-
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+</div>
